@@ -20,12 +20,14 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.browser.get(self.live_server_url)
         self.browser.set_window_size(1024, 768)
 
+        print(self.browser.get_window_size())
+
         # She notices the input box is nicely centered
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
-            delta=10
+            delta=10, msg='first'
         )
 
         # She starts a new list and sees the input is nicely
@@ -37,7 +39,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
-            delta=10
+            delta=10, msg='second'
         )
 
     def check_for_row_in_list_table(self, row_text):
@@ -116,8 +118,8 @@ class NewVisitorTest(StaticLiveServerTestCase):
 
         # Now a new user, Francis, comes along to the site.
 
-        ## We use a new browser session to make sure that no information
-        ## of Edith's is coming through from cookies etc
+        # # We use a new browser session to make sure that no information
+        # # of Edith's is coming through from cookies etc
         self.browser.quit()
         self.browser = webdriver.Chrome()
 
