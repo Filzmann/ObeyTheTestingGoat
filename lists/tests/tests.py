@@ -74,10 +74,8 @@ class NewListTest(TestCase):
 
     def test_redirects_after_POST(self):
         response = self.client.post('/lists/new', data={'item_text': 'A new list item'})
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/lists/the-only-list-in-the-world/')
-        self.assertNotContains(response, 'other list item 1')
-        self.assertNotContains(response, 'other list item 2')
+        new_list = List.objects.first()
+        self.assertRedirects(response, f'/lists/{new_list.id}/')
 
     def test_passes_correct_list_to_template(self):
         other_list = List.objects.create()
