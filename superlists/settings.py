@@ -25,7 +25,7 @@ SECRET_KEY = 'n$#eh)37=p!1g#5i!h1jfetfjuw0p07s@wf)aj7fx(py-nkt+a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
