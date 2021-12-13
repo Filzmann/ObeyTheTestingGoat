@@ -1,6 +1,6 @@
 import sys, os
-ApplicationDirectory = 'superlists'
-ApplicationName = 'superlists'
+ApplicationDirectory = 'lists'
+ApplicationName = 'lists'
 VirtualEnvDirectory = 'virtualenv'
 VirtualEnv = os.path.join(os.getcwd(), VirtualEnvDirectory, 'bin', 'python')
 if sys.executable != VirtualEnv: os.execl(VirtualEnv, VirtualEnv, *sys.argv)
