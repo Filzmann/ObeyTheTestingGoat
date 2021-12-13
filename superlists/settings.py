@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'superliststs.urls'
+ROOT_URLCONF = 'superlists.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'superliststs.wsgi.application'
+WSGI_APPLICATION = 'superlists.wsgi.application'
 
 
 # Database
